@@ -13,19 +13,15 @@ function doRequest (opts) {
 
 
 function request (opts) {
-    console.log('Making request: %j', opts);
+
     return doRequest(opts)
         .then(function (response) {
-            console.log('Request finished');
             return response;
         })
         .catch(function (reason) {
-            console.log('Request error:', reason.message, reason.response && reason.response.statusCode);
 
-            let message = 'Error requesting Google Play:' + reason.message;
-            if (reason.response && reason.response.statusCode === 404) {
-                message = 'App not found (404)';
-            }
+            let message = 'Error requesting: ' + reason.message;
+
             const err = Error(message);
             err.status = reason.response && reason.response.statusCode;
             throw err;

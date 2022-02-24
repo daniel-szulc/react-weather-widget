@@ -1,13 +1,13 @@
 export const langText = {
 
-    en: { Wind: 'Wind', Humidity: 'Humidity', FeelsLike: 'Feels like', Precipitation: 'Precipitation'},
+    en: { Wind: 'Wind', Humidity: 'Humidity', FeelsLike: 'Feels like'},
 
-    pl: { Wind: 'Wiatr', Humidity: 'Wilgotność', FeelsLike: 'Temperatura odczuwalna', Precipitation: 'Szansa na opady'},
+    pl: { Wind: 'Wiatr', Humidity: 'Wilgotność', FeelsLike: 'Odczuwalna'},
 
-    de: { Wind: 'Wind', Humidity: 'Feuchtigkeit', Precipitation:'Niederschlag'},
+    de: { Wind: 'Wind', Humidity: 'Feuchtigkeit', FeelsLike: 'Gefühlt'},
 
-    es: { Wind: 'Viento', Humidity: 'Humedad',},
+    es: { Wind: 'Viento', Humidity: 'Humedad', FeelsLike: 'Sensación'},
 
-    ru: { Wind: 'Ветер', Humidity: 'Влажность', Precipitation:'Атмосферные осадки'},
+    ru: { Wind: 'Ветер', Humidity: 'Влажность', FeelsLike:'Ощущается как'},
 
 }

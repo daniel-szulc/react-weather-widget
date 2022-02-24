@@ -97,5 +97,5 @@ cmake-build-*/
 .idea/codestream.xml
 
 #others
-/src/testWeatherProvider.js
-/src/index.js
+src/testWeatherProvider.js
+src/index.js

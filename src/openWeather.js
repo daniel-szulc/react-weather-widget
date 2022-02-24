@@ -1,6 +1,7 @@
 import request from './request';
-
+import  {unitConvert, getTempUnit, getSpeedUnit} from "./unitsConverter";
 function getWeatherType(name, iconCode, id)
+
 {
     switch (name) {
         case 'Thunderstorm': {
@@ -135,18 +136,22 @@ function isNight(sunrise, sunset, dt)
     return dt < sunrise || dt > sunset;
 }
 
-function castData(data)
+function castData(data, opts)
 {
-    console.log(data);
+
     return {
         location: data.name,
         isNight: isNight(data.sys.sunrise, data.sys.sunset, data.dt),
-        temperature: Math.round(data.main.temp),
+        temperature: Math.round(unitConvert(data.main.temp, opts.tempUnit)),
         humidity: data.main.humidity,
         weather_desc: data.weather[0].description,
         weather_type: getWeatherType(data.weather[0].main, data.weather[0].icon, data.weather[0].id),
-        feels_like: Math.round(data.main.feels_like),
-        wind: data.wind.speed,
+        feels_like: Math.round(unitConvert(data.main.feels_like, opts.tempUnit)),
+        wind: Math.round((unitConvert(data.wind.speed, opts.windSpeedUnit))*10)/10,
+        units:{
+            temp: getTempUnit(opts.tempUnit),
+            wind: getSpeedUnit(opts.windSpeedUnit)
+        }
     };
 }
 
@@ -158,7 +163,7 @@ function openWeather(opts) {
                 q: opts.location,
                 appid: opts.apiKey,
                 lang: opts.lang,
-                units: 'metric',
+                units: 'standard',
             }
         };
         const url = 'https://api.openweathermap.org/data/2.5/weather';
@@ -172,7 +177,7 @@ function openWeather(opts) {
         };
         return new Promise(async (result) => {
                 request(requestOptions)
-                    .then((res) => castData(res)).then((data) => result(data))
+                    .then((res) => castData(res, opts)).then((data) => result(data))
         });
     }
 

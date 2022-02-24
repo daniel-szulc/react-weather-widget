@@ -9,9 +9,8 @@ import testWeatherProvider from "./testWeatherProvider"
 
 const WeatherWidget = ({
                         provider='openWeather',
-                       /* tempUnit,
-                        windSpeedUnit,
-                        showForecast,*/
+                        tempUnit = 'C',
+                        windSpeedUnit = 'km/h',
                         lang = 'en',
                         apiKey,
                         location = 'Warsaw',
@@ -20,9 +19,9 @@ const WeatherWidget = ({
 
     useEffect(()=>{
         switch (provider) {
-            case "openWeather":{
+            default:{
                 openWeather
-                ({apiKey, location, lang}).then((result) => {
+                ({apiKey, location, lang, tempUnit, windSpeedUnit}).then((result) => {
                     setData(result)
                 });
                 break;
@@ -59,21 +58,22 @@ const WeatherWidget = ({
                 </div>
             </div>
             <div className="current-weather">
-            <h1>{_data.temperature}<span className="degree">°</span></h1>
+            <h1>{_data.temperature}<span className="light-font" dangerouslySetInnerHTML={{ __html: _data.units.temp }} /></h1>
             <h3>{_data.weather_desc}</h3>
             </div>
             <div className="details">
                 <div className="detail-item">
-                    <div><h4>{langText[lang].Wind}</h4></div>
-                        <div><h2>{_data.wind}</h2></div>
+                    <div><h4>{langText.hasOwnProperty(lang) && langText[lang].hasOwnProperty('Wind') ? langText[lang].Wind : langText['en'].Wind}</h4></div>
+                        <div><h2>{_data.wind}<span className="light-font">{_data.units.wind}</span></h2></div>
                 </div>
                 <div className="detail-item">
-                    <div><h4>{langText[lang].Humidity}</h4></div>
-                    <div><h2>{_data.humidity}</h2></div>
+                    <div><h4>{langText.hasOwnProperty(lang) && langText[lang].hasOwnProperty('Humidity') ? langText[lang].Humidity : langText['en'].Humidity}</h4></div>
+                    <div><h2>{_data.humidity}<span className="light-font">%</span></h2></div>
                 </div>
                 <div className="detail-item">
-                    <div><h4>{langText[lang].FeelsLike}</h4></div>
-                        <div><h2>{_data.feels_like}<span className="degree">°</span></h2></div>
+                    <div><h4>{langText.hasOwnProperty(lang) && langText[lang].hasOwnProperty('FeelsLike') ? langText[lang].FeelsLike : langText['en'].FeelsLike}</h4></div>
+
+                        <div><h2>{_data.feels_like}<span className="light-font" dangerouslySetInnerHTML={{ __html: _data.units.temp }} /></h2></div>
                 </div>
             </div>
             <div>
