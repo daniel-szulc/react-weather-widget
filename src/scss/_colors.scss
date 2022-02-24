@@ -1,0 +1,57 @@
+//////// DEFAULT COLORS ////////
+$base-firs-color: #9bf8f4;
+$base-second-color: #6f7bf7;
+$background-gradient: (45deg, $base-firs-color, $base-second-color);
+
+$font-color: white;
+$font-second-color:  rgba($font-color, 0.7);
+
+$water-drop:  #00eaff;
+$shadow: drop-shadow(0 0 10px rgba(0, 0, 0, 0.15));
+$cloud-gradient: url(#cloud-gradient);
+$sun-gradient: url(#sun-gradient);
+$thunder-gradient: url(#thunder-gradient);
+$snowflake-gradient: url(#snowflake-gradient);
+$fog-gradient: url(#fog-gradient);
+
+#cloud-gradient{
+  --color-stop: rgba(255, 255, 255, 0.65);
+  --color-bot: rgba(243, 237, 237, 0.8);
+}
+#sun-gradient {
+  --color-stop: rgba(236, 184, 0, 0.9);
+  --color-bot: rgba(234, 121, 13, 0.9);
+}
+#thunder-gradient {
+  --color-stop: rgba(234, 190, 13, 1);
+  --color-bot: rgba(223, 248, 11, 1);
+}
+
+#snowflake-gradient{
+  --color-stop: rgb(224, 224, 224);
+  --color-bot: rgba(255, 255, 255);
+}
+
+#fog-gradient{
+  --color-stop: rgba(243, 237, 237, 1);
+  --color-bot: rgb(83, 194, 236);
+}
+
+//////// NIGHT COLORS ////////
+
+$moon-gradient: url(#moon-gradient);
+$cloud-night-gradient: url(#cloud-night-gradient);
+
+$night-base-first-color: #0e0e11;
+$night-base-second-color: #383c47;
+$night-background-gradient: (45deg, $night-base-first-color, $night-base-second-color);
+$night-water-drop: #1e8cb4;
+
+#cloud-night-gradient{
+  --color-stop: rgba(255, 255, 255,  0.65);
+  --color-bot: rgba(168, 164, 164, 0.9);
+}
+#moon-gradient {
+  --color-stop: rgb(255, 255, 255);
+  --color-bot: rgba(96, 96, 96, 0.84);
+}

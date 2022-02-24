@@ -1,0 +1,148 @@
+@use 'colors';
+@import 'loading-spinner';
+@import 'weather-icons';
+@import 'night-mode';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap'); //fonts
+
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Lato', sans-serif;
+}
+
+.container{
+  height: 520px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  position: relative;
+
+  .loading-area{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .background{
+    margin: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    border-radius: 30px;
+    overflow:hidden;
+    background: -webkit-linear-gradient($background-gradient);
+    background: linear-gradient($background-gradient);
+    &::after {
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content:"";
+      width: 150%;
+      height: 130%;
+      margin: 0;
+      background: -webkit-linear-gradient($background-gradient);
+      background: linear-gradient($background-gradient);
+      border-radius: 100%;
+      float: left;
+    }
+  }
+
+  .content {
+    height: 16%;
+  }
+
+  .weather-icon{
+    height:37%;
+  }
+
+  .current-weather{
+    height:25%;
+    .degree{
+      color: $font-second-color;
+    }
+  }
+
+  .details{
+    height: 22%;
+    width: 100%;
+    flex-direction: column;
+    margin: 0;
+
+    display: table;
+    position: relative;
+    .detail-item{
+      padding: 5px;
+      height: 100%;
+      width: 33.33%;
+      display: table-cell;
+      vertical-align: middle;
+      text-align:center;
+      div {
+        vertical-align: middle;
+        text-align:center;
+        display:flex;
+        height: 50%;
+        width: 100%;
+      }
+      h4{
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+        font-weight: 400;
+        font-size: 13px;
+        width: 100%;
+        margin: auto;
+      }
+      h2{
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 30px;
+        text-align:center;
+        width: 100%;
+
+      }
+    }
+  }
+
+  @for $index from 1 through 6 {
+    h#{$index}{
+      color: $font-color;
+      text-align: center;
+    }
+  }
+
+  h1{
+    font-size: 55px;
+    padding-right: 20px;
+    padding-left: 41px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-weight: 900;
+  }
+  h2{
+    font-size: 30px;
+    padding: 5%;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-weight: 900;
+  }
+
+  h3{
+    font-size: 23px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-weight: 400;
+  }
+}
