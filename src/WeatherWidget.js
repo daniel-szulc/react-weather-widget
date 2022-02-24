@@ -14,7 +14,7 @@ const WeatherWidget = ({
                         showForecast,*/
                         lang = 'en',
                         apiKey,
-                        location,
+                        location = 'Warsaw',
                       }) => {
     const [_data, setData] = useState();
 
@@ -24,8 +24,6 @@ const WeatherWidget = ({
                 openWeather
                 ({apiKey, location, lang}).then((result) => {
                     setData(result)
-                    console.log("result")
-                    console.log(result)
                 });
                 break;
             }
@@ -58,7 +56,6 @@ const WeatherWidget = ({
             <div className="weather-icon">
                 <div className="inset">
                     {weatherIcon[_data.weather_type]}
-                 {/*   {weatherIcon['LightRain']}*/}
                 </div>
             </div>
             <div className="current-weather">
@@ -87,6 +84,5 @@ const WeatherWidget = ({
       </React.Fragment>
   );
 }
-
 
 export default WeatherWidget;
