@@ -46,7 +46,7 @@ const WeatherWidget = ({
       <React.Fragment>
       <div className="container">
           {!_data && <div className='loading-area'>
-
+              <div className='spinner'/>
           </div>}
           {_data && (
               <div className={"container " + (_data.isNight ? "night-mode" : "")}>

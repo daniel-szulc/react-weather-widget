@@ -1,0 +1,19 @@
+.spinner {
+  display: block;
+  margin: auto;
+  position: relative;
+  border: 12px solid rgba(243, 243, 243, 0.5); /* Light grey */
+  border-top: 12px solid rgb(58, 54, 54); /* Blue */
+  border-radius: 50%;
+  width: 30%;
+  padding-top: 30%;
+  z-index: 1;
+  float: left;
+  animation: spin 2s linear infinite;
+
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

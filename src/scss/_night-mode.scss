@@ -1,0 +1,37 @@
+
+
+.night-mode{
+
+
+
+  &.container{
+    .background{
+  background: -webkit-linear-gradient($night-background-gradient);
+  background: linear-gradient($night-background-gradient);
+      &::after{
+        background: -webkit-linear-gradient($night-background-gradient);
+        background: linear-gradient($night-background-gradient);
+      }
+
+}
+    .weather-icon{
+
+  .Cloud{
+    svg{
+      fill: $cloud-night-gradient
+    }
+  }
+  .Sun{
+    height: 100%;
+    svg{
+      fill: $moon-gradient;
+    }
+  }
+
+
+  .drop-shape{
+    background-color: $night-water-drop;
+  }
+}
+  }
+}
