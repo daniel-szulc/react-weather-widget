@@ -1,17 +1,40 @@
 {
   "name": "@daniel-szulc/react-weather-widget",
-  "version": "0.1.1",
+  "description": "A simple weather widget created using React.js ☀. This Component loading forecast data from various weather providers ⛈.",
+  "author": "daniel-szulc",
+  "keywords": [
+    "react",
+    "component",
+    "widget",
+    "weather",
+    "sass",
+    "openweathermap",
+    "babel"
+  ],
+  "version": "0.4.0",
   "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-szulc/react-weather-widget.git"
+  },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "axios": "^0.26.0",
-    "node-sass": "^7.0.1",
-    "react": "^17.0.2",
-    "react-scripts": "5.0.0"
+    "babel-jest": "^26.6.0",
+    "node-sass": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
+    "sass": "node-sass src/lib/components/styles/styles.scss src/App.css -w",
+    "build": "del dist && cross-env NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -32,25 +55,19 @@
       "last 1 safari version"
     ]
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "WeatherWidget.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/daniel-szulc/react-weather-widget.git"
-  },
-  "keywords": [
-    "react",
-    "component",
-    "widget",
-    "weather",
-    "sass",
-    "openweathermap"
-  ],
-  "author": "daniel-szulc",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/daniel-szulc/react-weather-widget/issues"
-  },
-  "homepage": "https://github.com/daniel-szulc/react-weather-widget#readme"
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "chai": "^4.3.6",
+    "cross-env": "^7.0.3",
+    "jest": "26.6.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "react-test-renderer": "^17.0.2"
+  }
 }

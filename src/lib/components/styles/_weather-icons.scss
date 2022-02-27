@@ -1,0 +1,252 @@
+@import 'colors';
+
+.daniel-szulc-weather-widget .weather-widget .weather-icon {
+
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    .inset {
+      margin: 0;
+      display: inline-block;
+      position: relative;
+      margin-block: auto;
+      min-height: 40%;
+      max-width: 90%;
+      max-height: 100%;
+      min-width: 50%;
+      height: auto;
+      width: auto;
+      margin-inline: auto;
+      padding-block: 20px;
+      padding-inline: 40px;
+      justify-content: center;
+      resize: horizontal;
+    }
+
+    svg, .shape {
+      filter: $shadow;
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+      width: auto;
+    }
+
+    .clear {
+      height: 90%;
+    }
+
+    .fall {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+
+      .Cloud {
+        position: relative;
+        height: 75%;
+        z-index: 2;
+        width: auto;
+      }
+
+      .drops {
+        width: 100%;
+        text-align: center;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+        margin-top: 8%;
+      }
+
+      &.snow {
+        .Snowflake {
+          margin: 0;
+          margin-inline: 4%;
+          width: 20%;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+        }
+
+        .drops {
+          margin-top: 5%;
+        }
+
+        &.rain {
+          .drops {
+            margin-top: 0;
+          }
+
+          .drop-shape {
+            margin-top: 10%;
+            width: 16%;
+            margin-bottom: 2%;
+          }
+
+          .Snowflake {
+            margin-top: 5%;
+
+          }
+        }
+      }
+    }
+
+    .thunderstorm {
+      margin: auto;
+      height: auto;
+      max-width: 100%;
+      text-align: center;
+
+      .Cloud {
+        margin-inline: auto;
+        width: 90%;
+        z-index: 2;
+        position: relative;
+      }
+
+      .thunder{
+        width: 90%;
+        text-align: center;
+        margin-inline: auto;
+        display: flex;
+        justify-content: center;
+      }
+
+      .drop-shape {
+        margin: 15%;
+        margin-inline: 8%;
+        width: 20%;
+      }
+
+      .drops {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-top: -8%;
+        width: 80%;
+        margin-inline: auto;
+        margin-right: 12%;
+
+        .Flash {
+          margin-top: -22%;
+          margin-right: -10%;
+        }
+      }
+
+      .Flash {
+        margin-top: -30%;
+
+        max-width: 35%;
+        min-width: 30%;
+        width: auto;
+        height: 40%;
+        top: 0;
+        z-index: 1;
+      }
+
+    }
+
+    .fog {
+      text-align: center;
+      width: 100%;
+      height: 100%;
+
+      .cloud-foggy {
+        overflow: hidden;
+        height: 55%;
+      }
+
+      .Cloud {
+        margin-inline: auto;
+        width: 65%;
+        position: relative;
+      }
+
+      .Mist {
+        padding: 6%;
+        position: relative;
+        display: block;
+
+        svg {
+          width: 75%;
+        }
+
+      }
+    }
+
+    .cloudy {
+      margin: auto;
+      height: auto;
+      max-width: 100%;
+
+      .Sun {
+        padding-left: 5%;
+        padding-top: 5%;
+        max-width: 35%;
+        min-width: 30%;
+        width: auto;
+        height: 50%;
+        top: 0;
+        z-index: 1;
+        position: absolute;
+      }
+
+      .Cloud {
+        position: relative;
+        height: 100%;
+        z-index: 2;
+        width: auto;
+      }
+    }
+
+    .Mist {
+      svg {
+        fill: $fog-gradient;
+      }
+    }
+
+    .Snowflake {
+      svg {
+        fill: $snowflake-gradient;
+      }
+    }
+
+    .Cloud {
+      svg {
+        fill: $cloud-gradient;
+      }
+    }
+
+    .Sun {
+      height: 100%;
+
+      svg {
+        fill: $sun-gradient;
+      }
+    }
+
+    .Flash {
+      svg {
+        fill: $thunder-gradient;
+      }
+    }
+
+    .drop-shape {
+      z-index: 1;
+      width: 15%;
+      text-align: center;
+      position: relative;
+      background-color: $water-drop;
+      border-radius: 50% 0 50% 50%;
+      transform: rotate(-30deg);
+      float: left;
+      margin-inline: 4%;
+    }
+
+    .drop-shape:before {
+      content: "";
+      float: left;
+      padding-top: 100%;
+    }
+
+  }

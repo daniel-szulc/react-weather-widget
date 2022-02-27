@@ -1,7 +1,8 @@
-import request from './request';
-import  {unitConvert, getTempUnit, getSpeedUnit} from "./unitsConverter";
-function getWeatherType(name, iconCode, id)
+import React from 'react';
+import request from './request.js';
+import  {unitConvert, getTempUnit, getSpeedUnit} from "./unitsConverter.js";
 
+function getWeatherType(name, iconCode, id)
 {
     switch (name) {
         case 'Thunderstorm': {

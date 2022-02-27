@@ -11,7 +11,8 @@ bower_components
 /coverage
 
 # production
-/build
+/dist
+./daniel-szulc-react-weather-widget-0.2.0.tgz
 
 # misc
 .DS_Store
@@ -71,6 +72,17 @@ logs
 # *.iml
 # *.ipr
 
+### yarn ###
+# https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
+
+.yarn/*
+!.yarn/releases
+!.yarn/patches
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+!.yarn/cache
+
 # CMake
 cmake-build-*/
 
@@ -95,7 +107,3 @@ cmake-build-*/
 # CodeStream plugin
 # https://plugins.jetbrains.com/plugin/12206-codestream
 .idea/codestream.xml
-
-#others
-src/testWeatherProvider.js
-src/index.js

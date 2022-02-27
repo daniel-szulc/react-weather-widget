@@ -2,9 +2,7 @@
 
 .night-mode{
 
-
-
-  &.container{
+  &.weather-widget{
     .background{
   background: -webkit-linear-gradient($night-background-gradient);
   background: linear-gradient($night-background-gradient);

@@ -1,3 +1,4 @@
+import React from 'react';
 function getSpeedUnit (unit) {
     switch (unit){
         case 'mph':
