@@ -127,8 +127,13 @@ function getWeatherType(name, iconCode, id)
                 }
             }
         }
-        default:
+        default: {
+            if(id>=700 && id<800)
+            {
+                return 'Fog';
+            }
             return name;
+        }
     }
 }
 
