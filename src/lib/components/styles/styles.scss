@@ -1,8 +1,23 @@
+
 @import 'colors';
 @import 'base';
 @import 'loading-spinner';
 @import 'weather-icons';
 @import 'night-mode';
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap'); //fonts
+.daniel-szulc-weather-widget * {
 
+  font-family: 'Lato', sans-serif;
 
+html {
+  box-sizing: border-box;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Lato', sans-serif;
+}
+
+code {
+  font-family: 'Lato', sans-serif;
+}
+}

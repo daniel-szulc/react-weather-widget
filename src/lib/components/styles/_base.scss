@@ -1,18 +1,6 @@
 
-html {
-  box-sizing: border-box;
-  width: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: 'Lato', sans-serif;
-}
+.daniel-szulc-weather-widget {
 
-code {
-  font-family: 'Lato', sans-serif;
-}
-
-
-.daniel-szulc-weather-widget{
   height: 520px;
   width: 350px;
   display: flex;
@@ -21,6 +9,7 @@ code {
   position: relative;
 
   .weather-widget{
+
     height: 100%;
     width: 100%;
     position: relative;
@@ -80,11 +69,15 @@ code {
   }
 
   .current-weather{
+    all: inherit;
     height:25%;
     color: $font-second-color;
     position: relative;
     .light-font{
       font-weight: 400;
+    }
+    h1{
+      padding: 0;
     }
   }
 
@@ -94,9 +87,7 @@ code {
     width: 100%;
     flex-direction: column;
     margin: 0;
-
     display: table;
-    position: relative;
 
     .light-font{
       font-weight: 200;
@@ -145,11 +136,14 @@ code {
 
   h1{
     font-size: 55px;
-    padding-right: 6%;
-    padding-left: 19%;
     margin-block-start: 0;
     margin-block-end: 0;
+    padding: 0;
     font-weight: 900;
+    span {&.light-font{
+      display: inline-block;
+      width: 0;
+    }}
   }
   h2{
     font-size: 30px;

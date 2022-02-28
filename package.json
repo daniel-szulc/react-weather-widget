@@ -11,8 +11,9 @@
     "openweathermap",
     "babel"
   ],
-  "version": "0.4.0",
+  "version": "0.4.1",
   "private": false,
+  "license" : "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -20,6 +21,7 @@
     "dist",
     "README.md"
   ],
+  "homepage": "https://github.com/daniel-szulc/react-weather-widget#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/daniel-szulc/react-weather-widget.git"

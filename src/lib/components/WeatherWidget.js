@@ -41,7 +41,7 @@ const WeatherWidget = ({
             <h2>{_data.location}</h2>
             </div>
             <div className="weather-icon">
-                <div className="inset">
+                <div className="weather-inset">
                     {weatherIcon[_data.weather_type]}
                 </div>
             </div>

@@ -7,7 +7,8 @@
     display: flex;
     flex-direction: column;
 
-    .inset {
+    .weather-inset {
+
       margin: 0;
       display: inline-block;
       position: relative;
@@ -15,12 +16,13 @@
       min-height: 40%;
       max-width: 90%;
       max-height: 100%;
-      min-width: 50%;
+      min-width: 80%;
       height: auto;
       width: auto;
       margin-inline: auto;
-      padding-block: 20px;
-      padding-inline: 40px;
+
+      padding-block: 5%;
+      padding-inline: 10%;
       justify-content: center;
       resize: horizontal;
     }
@@ -37,10 +39,75 @@
       height: 90%;
     }
 
+
+  .cloudy {
+    all: initial;
+    min-width: 60%;
+    min-height: 60%;
+    width: 90%;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+
+    text-align: center;
+    margin: 0;
+    -moz-margin-start: 0;
+    -moz-margin-end:0;
+    .Sun {
+      padding-left: 5%;
+      padding-top: 5%;
+      max-width: 35%;
+      min-width: 30%;
+      width: auto;
+      height: 50%;
+      top: 0;
+      z-index: 1;
+      position: absolute;
+
+    }
+
+    .Cloud {
+      position: relative;
+      height: 100%;
+      z-index: 2;
+      width: auto;
+      -moz-margin-start: 10%;
+      -moz-margin-end:10%;
+    }
+  }
+
+
+  .clouds{
+    all: initial;
+    margin-block: auto;
+    text-align: center;
+    display: block;
+    margin: auto;
+    height: auto;
+    max-width: 90%;
+    -moz-margin-start: 10%;
+    -moz-margin-end:10%;
+  }
+
     .fall {
+      all: initial;
+      display: block;
       height: 100%;
       width: 100%;
       text-align: center;
+      .cloudy{
+        min-width: 60%;
+        min-height: 60%;
+        width: 90%;
+        height: auto;
+        margin-bottom: 0;
+        max-height: 100%;
+        max-width: 100%;
+        margin-inline: auto;
+        text-align: center;
+
+        display: block;
+      }
 
       .Cloud {
         position: relative;
@@ -50,6 +117,8 @@
       }
 
       .drops {
+
+        all: revert;
         width: 100%;
         text-align: center;
         margin-inline: auto;
@@ -62,7 +131,7 @@
         .Snowflake {
           margin: 0;
           margin-inline: 4%;
-          width: 20%;
+          width: 18%;
           text-align: center;
           display: flex;
           justify-content: center;
@@ -96,7 +165,8 @@
       height: auto;
       max-width: 100%;
       text-align: center;
-
+      -moz-padding-start: 5%;
+      -moz-padding-end: 5%;
       .Cloud {
         margin-inline: auto;
         width: 90%;
@@ -135,7 +205,8 @@
 
       .Flash {
         margin-top: -30%;
-
+        -moz-padding-start: 3%;
+        -moz-padding-end: 3%;
         max-width: 35%;
         min-width: 30%;
         width: auto;
@@ -157,6 +228,7 @@
       }
 
       .Cloud {
+        text-align: center;
         margin-inline: auto;
         width: 65%;
         position: relative;
@@ -174,31 +246,6 @@
       }
     }
 
-    .cloudy {
-      margin: auto;
-      height: auto;
-      max-width: 100%;
-
-      .Sun {
-        padding-left: 5%;
-        padding-top: 5%;
-        max-width: 35%;
-        min-width: 30%;
-        width: auto;
-        height: 50%;
-        top: 0;
-        z-index: 1;
-        position: absolute;
-      }
-
-      .Cloud {
-        position: relative;
-        height: 100%;
-        z-index: 2;
-        width: auto;
-      }
-    }
-
     .Mist {
       svg {
         fill: $fog-gradient;
@@ -212,6 +259,7 @@
     }
 
     .Cloud {
+
       svg {
         fill: $cloud-gradient;
       }
