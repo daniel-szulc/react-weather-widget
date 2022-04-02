@@ -9,13 +9,13 @@ function getSpeedUnit (unit) {
         {
             return unit;
         }
-        case 'km/h':
+        case 'kmph':
         {
             return unit;
         }
         default:
         {
-            return 'm/s';
+            return 'mps';
         }
     }
 
@@ -48,7 +48,7 @@ function unitConvert (value, unit) {
         {
             return value*3.28;
         }
-        case 'km/h':
+        case 'kmph':
         {
             return value*3.6;
         }
@@ -60,7 +60,7 @@ function unitConvert (value, unit) {
         {
             return value * 9/5 - 459.67;
         }
-        default:    //default for K and m/s
+        default:    //default for K and mps
         {
             return value;
         }

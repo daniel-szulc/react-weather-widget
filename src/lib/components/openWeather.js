@@ -167,6 +167,8 @@ function openWeather(opts) {
         const body = {
             params: {
                 q: opts.location,
+                lon: opts.lon,
+                lat: opts.lat,
                 appid: opts.apiKey,
                 lang: opts.lang,
                 units: 'standard',
