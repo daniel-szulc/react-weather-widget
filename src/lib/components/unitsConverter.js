@@ -11,11 +11,11 @@ function getSpeedUnit (unit) {
         }
         case 'kmph':
         {
-            return unit;
+            return 'km/h';
         }
         default:
         {
-            return 'mps';
+            return 'm/s';
         }
     }
 
@@ -33,7 +33,7 @@ case 'F':
     }
 default:
     {
-        return 'K&ensp;';
+        return 'K';
     }
     }
 }
