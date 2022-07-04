@@ -8,7 +8,7 @@ import {ipFind, geoFind} from  "./geoLocalization"
 import openMeteo from "./providers/openMeteo";
 
 const WeatherWidget = ({
-                           provider='openWeather',
+                           provider='openMeteo',
                            tempUnit = 'C',
                            windSpeedUnit = 'kmph',
                            lang = 'en',
