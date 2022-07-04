@@ -1,6 +1,6 @@
 import React from 'react';
-import request from './request.js';
-import  {unitConvert, getTempUnit, getSpeedUnit} from "./unitsConverter.js";
+import request from '../request.js';
+import  {unitConvert, getTempUnit, getSpeedUnit} from "../unitsConverter.js";
 
 function getWeatherType(name, iconCode, id)
 {

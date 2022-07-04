@@ -9,7 +9,7 @@
 
 ## About
 
-🌦 A simple weather widget created using  React.js ☀. This Component loading forecast data from various weather providers ⛈ (currently [OpenWeather API](https://openweathermap.org) only). You can enter a specific location or let weather-widget locate the user by itself.
+🌦 A simple weather widget created using  React.js ☀. This Component loading forecast data from weather providers ⛈ ( [Open-Meteo](https://open-meteo.com) or [OpenWeather API](https://openweathermap.org)). You can enter a specific location or let weather-widget locate the user by itself.
 
 Please check out [the demo](https://daniel-szulc.github.io/#/react-weather-widget).
 
@@ -17,13 +17,14 @@ Please check out [the demo](https://daniel-szulc.github.io/#/react-weather-widge
 
 ## Installation
 
-First you need to [register on OpenWeather](https://home.openweathermap.org/users/sign_up) to get an API key.
-
-Then run:
+Just run:
 
 ```sh
 $ npm install @daniel-szulc/react-weather-widget
 ```
+
+Using the Open-Meteo provider, you don't need to generate your own API key. </br>
+Using the OpenWeather provider, you need to [register on OpenWeather](https://home.openweathermap.org/users/sign_up) to get an API key.
 
 ## Usage examples
 
@@ -33,8 +34,7 @@ import {WeatherWidget} from "@daniel-szulc/react-weather-widget"
 const App = () => {
   return (
     <WeatherWidget
-        apiKey='YOUR-API-KEY'
-        location='Warsaw'
+        autoLocate="gps"
     />
   );
 };
@@ -46,8 +46,9 @@ import {WeatherWidget} from "@daniel-szulc/react-weather-widget"
 const App = () => {
   return (
     <WeatherWidget
+        provider='openWeather'
         apiKey='YOUR-API-KEY'
-        autoLocate="gps"
+        location='Warsaw'
         tempUnit="F"
         windSpeedUnit="mps"
         lang="pl"
@@ -58,17 +59,17 @@ const App = () => {
 
 ## Props
 
-| Props           | Options                      | Default       | Description                                                                                                                                                                                                                                                                      |
-|-----------------|------------------------------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `apiKey`        | -                            | -             | Your api key from the openweather.                                                                                                                                                                                                                                               |
-| `location`      | -                            | -             | Your location for weather checking, e.g. "Warsaw".                                                                                                                                                                                                                               |
-| `lat`           | -                            | -             | Your latitude of the location for weather checking, e.g. "52.2317".                                                                                                                                                                                                              |
-| `lon`           | -                            | -             | Your longitude of the location for weather checking, e.g. "21.0057".                                                                                                                                                                                                             |
-| `autoLocate`    | "gps", "ip"                  | -             | Automatic user locating. "gps" for geolocation by the browser (requires the user's permission), "ip" for location by IP address. Leave empty if you want to enter a specific location.                                                                                           |
-| `provider`      | "openWeather"                | "openWeather" | Name of the weather data provider.                                                                                                                                                                                                                                               |
-| `tempUnit`      | "C", "F", "K"                | "C"           | Temperature unit for presenting data. Available are: degrees Celsius, degrees Fahrenheit and Kelvin.                                                                                                                                                                             |
-| `windSpeedUnit` | "mps", "mph", "fps", "kmph"  | "kmph"        | Speed unit for presenting data. Available are: meters per second, miles per hour, feet per second, kilometers per hour.                                                                                                                                                          |
-| `lang`          | "en", "pl", "de", "es", "ru" | "en"          | Interface language and weather provider. You can edit lang.js to add more languages for "Wind", "Humidity" and "FeelsLike". The available languages for the weather provider are listed at: [https://openweathermap.org/current#multi](https://openweathermap.org/current#multi) |
+| Props           | Options                      | Default      | Description                                                                                                                                                                                                                                                                          |
+|-----------------|------------------------------|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `apiKey`        | -                            | -            | (only for openWeather) Your api key from the openweather.                                                                                                                                                                                                                            |
+| `location`      | -                            | -            | Your location for weather checking, e.g. "Warsaw".                                                                                                                                                                                                                                   |
+| `lat`           | -                            | -            | Your latitude of the location for weather checking, e.g. "52.2317".                                                                                                                                                                                                                  |
+| `lon`           | -                            | -            | Your longitude of the location for weather checking, e.g. "21.0057".                                                                                                                                                                                                                 |
+| `autoLocate`    | "gps", "ip"                  | -            | Automatic user locating. "gps" for geolocation by the browser (requires the user's permission), "ip" for location by IP address. Leave empty if you want to enter a specific location.                                                                                               |
+| `provider`      | "openWeather", "openMeteo"   | "openMeteo"  | Name of the weather data provider.                                                                                                                                                                                                                                                   |
+| `tempUnit`      | "C", "F", "K"                | "C"          | Temperature unit for presenting data. Available are: degrees Celsius, degrees Fahrenheit and Kelvin.                                                                                                                                                                                 |
+| `windSpeedUnit` | "mps", "mph", "fps", "kmph"  | "kmph"       | Speed unit for presenting data. Available are: meters per second, miles per hour, feet per second, kilometers per hour.                                                                                                                                                              |
+| `lang`          | "en", "pl", "de", "es", "ru" | "en"         | Interface language and weather provider. You can edit lang.js to add more languages for "Wind", "Humidity" and "FeelsLike". The available languages for the OpenWeather provider are listed at: [https://openweathermap.org/current#multi](https://openweathermap.org/current#multi) |
 
 ## Try It
 

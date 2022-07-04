@@ -1,10 +1,11 @@
 import React from 'react';
 import './styles/styles.scss';
-import openWeather from './openWeather.js';
+import openWeather from './providers/openWeather.js';
 import {useEffect, useState} from "react";
 import {weatherIcon} from "./icons/weather-icons.js";
 import {langText} from "./lang.js";
 import {ipFind, geoFind} from  "./geoLocalization"
+import openMeteo from "./providers/openMeteo";
 
 const WeatherWidget = ({
                            provider='openWeather',
@@ -60,9 +61,23 @@ const WeatherWidget = ({
         })
         autoLocalization.then(() =>{
         switch (provider) {
-            default:{
+            case "openWeather":{
                 openWeather
                 ({apiKey, location, lat, lon, lang, tempUnit, windSpeedUnit}).then((result) => {
+                    setData(result)
+                });
+                break;
+            }
+            case "openMeteo":{
+                openMeteo
+                ({location, lat, lon, lang, tempUnit, windSpeedUnit}).then((result) => {
+                    setData(result)
+                });
+                break;
+            }
+            default:{
+                openMeteo
+                ({location, lat, lon, lang, tempUnit, windSpeedUnit}).then((result) => {
                     setData(result)
                 });
                 break;
