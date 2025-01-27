@@ -71,9 +71,9 @@ const ShowerRain = () => {
         <div className="fall rain">
             <WeatherIcon.Cloud/>
             <div className="drops">
-            <div className="shape drop-shape"/>
-            <div className="shape drop-shape"/>
-            <div className="shape drop-shape"/>
+                <div className="shape drop-shape"/>
+                <div className="shape drop-shape"/>
+                <div className="shape drop-shape"/>
             </div>
         </div>
     );

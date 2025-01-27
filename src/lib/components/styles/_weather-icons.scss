@@ -1,4 +1,4 @@
-@import 'colors';
+@use 'colors';
 
 .daniel-szulc-weather-widget .weather-widget .weather-icon {
 
@@ -28,7 +28,7 @@
     }
 
     svg, .shape {
-      filter: $shadow;
+      filter: colors.$shadow;
       max-width: 100%;
       max-height: 100%;
       height: auto;
@@ -95,6 +95,7 @@
       height: 100%;
       width: 100%;
       text-align: center;
+
       .cloudy{
         min-width: 60%;
         min-height: 60%;
@@ -105,8 +106,6 @@
         max-width: 100%;
         margin-inline: auto;
         text-align: center;
-
-        display: block;
       }
 
       .Cloud {
@@ -116,15 +115,19 @@
         width: auto;
       }
 
-      .drops {
+      .Sun{
+        width: 50%;
+        height: 40%;
+      }
 
+      .drops {
         all: revert;
         width: 100%;
         text-align: center;
         margin-inline: auto;
         display: flex;
         justify-content: center;
-        margin-top: 8%;
+        margin-top: 5%;
       }
 
       &.snow {
@@ -163,7 +166,7 @@
     .thunderstorm {
       margin: auto;
       height: auto;
-      max-width: 100%;
+      max-width: 75%;
       text-align: center;
       -moz-padding-start: 5%;
       -moz-padding-end: 5%;
@@ -248,20 +251,20 @@
 
     .Mist {
       svg {
-        fill: $fog-gradient;
+        fill: colors.$fog-gradient;
       }
     }
 
     .Snowflake {
       svg {
-        fill: $snowflake-gradient;
+        fill: colors.$snowflake-gradient;
       }
     }
 
     .Cloud {
 
       svg {
-        fill: $cloud-gradient;
+        fill: colors.$cloud-gradient;
       }
     }
 
@@ -269,13 +272,13 @@
       height: 100%;
 
       svg {
-        fill: $sun-gradient;
+        fill: colors.$sun-gradient;
       }
     }
 
     .Flash {
       svg {
-        fill: $thunder-gradient;
+        fill: colors.$thunder-gradient;
       }
     }
 
@@ -284,7 +287,7 @@
       width: 15%;
       text-align: center;
       position: relative;
-      background-color: $water-drop;
+      background-color: colors.$water-drop;
       border-radius: 50% 0 50% 50%;
       transform: rotate(-30deg);
       float: left;

@@ -1,3 +1,5 @@
+@use "colors";
+
 
 .daniel-szulc-weather-widget {
 
@@ -33,8 +35,8 @@
       z-index: 0;
       border-radius: 30px;
       overflow: hidden;
-      background: -webkit-linear-gradient($background-gradient);
-      background: linear-gradient($background-gradient);
+      background: -webkit-linear-gradient(colors.$background-gradient);
+      background: linear-gradient(colors.$background-gradient);
 
       &::after {
         position: absolute;
@@ -45,8 +47,8 @@
         width: 150%;
         height: 130%;
         margin: 0;
-        background: -webkit-linear-gradient($background-gradient);
-        background: linear-gradient($background-gradient);
+        background: -webkit-linear-gradient(colors.$background-gradient);
+        background: linear-gradient(colors.$background-gradient);
         border-radius: 100%;
         float: left;
       }
@@ -64,14 +66,14 @@
   }
 
   .light-font{
-    color: $font-second-color;
+    color: colors.$font-second-color;
     position: relative; top: -0.25em; font-size: 80%;
   }
 
   .current-weather{
     all: inherit;
     height:25%;
-    color: $font-second-color;
+    color: colors.$font-second-color;
     position: relative;
     .light-font{
       font-weight: 400;
@@ -123,13 +125,17 @@
         font-size: 30px;
         text-align:center;
         width: 100%;
+
+        span{
+          padding-left: 4px;
+        }
       }
     }
   }
 
   @for $index from 1 through 6 {
     h#{$index}{
-      color: $font-color;
+      color: colors.$font-color;
       text-align: center;
     }
   }

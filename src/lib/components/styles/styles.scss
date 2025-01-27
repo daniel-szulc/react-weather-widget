@@ -1,9 +1,8 @@
-
-@import 'colors';
-@import 'base';
-@import 'loading-spinner';
-@import 'weather-icons';
-@import 'night-mode';
+@use 'colors';
+@use 'base';
+@use 'loading-spinner';
+@use 'weather-icons';
+@use 'night-mode';
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap'); //fonts
 .daniel-szulc-weather-widget * {
 

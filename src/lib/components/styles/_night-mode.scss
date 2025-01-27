@@ -1,14 +1,16 @@
+@use "colors";
+
 
 
 .night-mode{
 
   &.weather-widget{
     .background{
-  background: -webkit-linear-gradient($night-background-gradient);
-  background: linear-gradient($night-background-gradient);
+  background: -webkit-linear-gradient(colors.$night-background-gradient);
+  background: linear-gradient(colors.$night-background-gradient);
       &::after{
-        background: -webkit-linear-gradient($night-background-gradient);
-        background: linear-gradient($night-background-gradient);
+        background: -webkit-linear-gradient(colors.$night-background-gradient);
+        background: linear-gradient(colors.$night-background-gradient);
       }
 
 }
@@ -16,19 +18,19 @@
 
   .Cloud{
     svg{
-      fill: $cloud-night-gradient
+      fill: colors.$cloud-night-gradient
     }
   }
   .Sun{
     height: 100%;
     svg{
-      fill: $moon-gradient;
+      fill: colors.$moon-gradient;
     }
   }
 
 
   .drop-shape{
-    background-color: $night-water-drop;
+    background-color: colors.$night-water-drop;
   }
 }
   }

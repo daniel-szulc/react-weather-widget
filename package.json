@@ -11,7 +11,7 @@
     "openweathermap",
     "babel"
   ],
-  "version": "1.0.1",
+  "version": "1.1.0",
   "private": false,
   "license": "MIT",
   "main": "dist/index.js",
@@ -28,14 +28,12 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "axios": "^0.26.1",
-    "babel-jest": "^27.5.1",
-    "node-sass": "^7.0.1"
+    "axios": "^1.7.9",
+    "babel-jest": "^27.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "react-scripts test",
-    "sass": "node-sass src/lib/components/styles/styles.scss src/App.css -w",
+    "sass": "sass src/lib/components/styles/styles.scss src/App.css --watch",
     "build": "del dist && cross-env NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "eject": "react-scripts eject"
   },
@@ -61,15 +59,12 @@
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^14.0.4",
     "chai": "^4.3.6",
     "cross-env": "^7.0.3",
     "jest": "27.5.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.0",
-    "react-test-renderer": "^18.0.0"
+    "sass": "^1.83.4"
   }
 }

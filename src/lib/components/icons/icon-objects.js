@@ -83,7 +83,7 @@ const Snowflake = () => {
 const Mist = () => {
     return (
         <div className="Mist">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink" viewBox="0 0 90.91 30.23">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.91 30.23">
                 <defs>
                     <linearGradient id="fog-gradient" x1="28.4" y1="-15.66" x2="52.63" y2="14.46"
                                     gradientUnits="userSpaceOnUse">
