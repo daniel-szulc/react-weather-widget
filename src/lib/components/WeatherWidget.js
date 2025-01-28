@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/styles.scss';
+import './styles/styles.css';
 import openWeather from './providers/openWeather.js';
 import {useEffect, useState} from "react";
 import {weatherIcon} from "./icons/weather-icons.js";
